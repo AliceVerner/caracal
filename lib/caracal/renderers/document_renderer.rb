@@ -267,6 +267,17 @@ module Caracal
         end
       end
 
+      def render_pageorientation(xml, model)
+        xml.send 'w:p', paragraph_options do
+          xml.send 'w:pPr' do
+            xml.send 'w:sectPr' do
+              xml.send 'w:pgSz', ({ 'w:w' => model.width, 'w:h' => model.height, 'w:orient'  => model.orient })
+              xml.send 'w:type', ({'w:val' => 'continuous'})
+            end
+          end
+        end
+      end
+
       def render_paragraph(xml, model)
         run_props = [:color, :size, :bold, :italic, :underline].map { |m| model.send("paragraph_#{ m }") }.compact
 

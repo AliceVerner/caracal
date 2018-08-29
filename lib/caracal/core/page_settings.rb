@@ -18,9 +18,9 @@ module Caracal
           #-------------------------------------------------------------
 
           # accessors
-          attr_reader :page_width
-          attr_reader :page_orientation
-          attr_reader :page_height
+          attr_accessor :page_width
+          attr_accessor :page_orientation
+          attr_accessor :page_height
           attr_reader :page_margin_top
           attr_reader :page_margin_bottom
           attr_reader :page_margin_left
