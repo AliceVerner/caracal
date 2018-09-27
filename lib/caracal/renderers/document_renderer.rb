@@ -272,6 +272,7 @@ module Caracal
           xml.send 'w:pPr' do
             xml.send 'w:sectPr' do
               xml.send 'w:pgSz', ({ 'w:w' => model.width, 'w:h' => model.height, 'w:orient'  => model.orient })
+              xml.send 'w:pgMar', ({'w:bottom' => model.margin_bottom, 'w:right' => model.margin_right, 'w:left' => model.margin_left, 'w:top' => model.margin_top })
               xml.send 'w:type', ({'w:val' => 'continuous'})
             end
           end

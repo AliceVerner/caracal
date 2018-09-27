@@ -21,10 +21,10 @@ module Caracal
           attr_accessor :page_width
           attr_accessor :page_orientation
           attr_accessor :page_height
-          attr_reader :page_margin_top
-          attr_reader :page_margin_bottom
-          attr_reader :page_margin_left
-          attr_reader :page_margin_right
+          attr_accessor :page_margin_top
+          attr_accessor :page_margin_bottom
+          attr_accessor :page_margin_left
+          attr_accessor :page_margin_right
 
 
           #-------------------------------------------------------------

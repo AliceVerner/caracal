@@ -15,10 +15,10 @@ module Caracal
         #-------------------------------------------------------------
         
         # constants
-        const_set(:DEFAULT_MARGIN_TOP,    0)  # units in twips
-        const_set(:DEFAULT_MARGIN_BOTTOM, 0)  # units in twips
-        const_set(:DEFAULT_MARGIN_LEFT,   0)  # units in twips
-        const_set(:DEFAULT_MARGIN_RIGHT,  0)  # units in twips
+        const_set(:DEFAULT_MARGIN_TOP,    566)  # units in twips
+        const_set(:DEFAULT_MARGIN_BOTTOM, 566)  # units in twips
+        const_set(:DEFAULT_MARGIN_LEFT,   1133) # units in twips
+        const_set(:DEFAULT_MARGIN_RIGHT,  566)  # units in twips
         
         # accessors
         attr_reader :margin_top

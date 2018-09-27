@@ -15,7 +15,7 @@ module Caracal
         #-------------------------------------------------------------
 
         # accessors
-        attr_reader :orient, :width, :height
+        attr_reader :orient, :width, :height, :margin_top, :margin_right, :margin_bottom, :margin_left
 
         # initialization
         def initialize(options={}, &block)
@@ -23,9 +23,17 @@ module Caracal
           if @orient == 'portrait'
             @width = 12240
             @height = 15840
+            @margin_top = 566
+            @margin_right = 566
+            @margin_bottom = 566
+            @margin_left = 1133
           else
             @width = 15840
             @height = 12240
+            @margin_top = 1133
+            @margin_right = 566
+            @margin_bottom = 566
+            @margin_left = 566
           end
 
           super options, &block

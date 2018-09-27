@@ -16,26 +16,35 @@ module Caracal
           #-------------------------------------------------------------
           def start_turning(options = {})
             orient = options[:orient] || 'portrait'
-            width, height =
+            width, height, margin_top, margin_right, margin_bottom, margin_left =
               if orient == 'portrait'
-                [12240, 15840]
+                [12240, 15840, 566, 566, 566, 1133]
               else
-                [15840, 12240]
+                [15840, 12240, 1133, 566, 566, 566]
               end
             return if page_orientation == orient
             self.page_width = width
             self.page_height = height
             self.page_orientation = orient
+            self.page_margin_top = margin_top
+            self.page_margin_right = margin_right
+            self.page_margin_bottom = margin_bottom
+            self.page_margin_left = margin_left
           end
 
           def end_turning(options = {})
             orient = options[:orient] || 'portrait'
-            model     = Caracal::Core::Models::PageOrientationModel.new(orient: orient)
+            model  = Caracal::Core::Models::PageOrientationModel.new(orient: orient)
+
             contents << model
             if page_orientation != model.orient
               self.page_width = model.width
               self.page_height = model.height
               self.page_orientation = model.orient
+              self.page_margin_top = margin_top
+              self.page_margin_right = margin_right
+              self.page_margin_bottom = margin_bottom
+              self.page_margin_left = margin_left
             end
             model
           end
